@@ -22,10 +22,7 @@ if __name__ == "__main__":
             count += 1
             parts = line.split()
 
-            if (len(parts) >= 7 and
-                    parts[1] == "-" and
-                    parts[2].startswith("[") and
-                    parts[-5:-2] == ['"GET', '/projects/260', 'HTTP/1.1"']):
+            if len(parts) >= 2:
                 try:
                     status_code = int(parts[-2])
                     file_size = int(parts[-1])
