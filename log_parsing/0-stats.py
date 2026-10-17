@@ -24,11 +24,13 @@ if __name__ == "__main__":
 
             if len(parts) >= 2:
                 try:
-                    status_code = int(parts[-2])
                     file_size = int(parts[-1])
                     t_size += file_size
 
-                    if status_code in [200, 301, 400, 401, 403, 404, 405, 500]:
+                    status_code = parts[-2]
+
+                    if status_code in ["200", "301", "400", "401",
+                                       "403", "404", "405", "500"]:
                         if status_code in status:
                             status[status_code] += 1
                         else:
