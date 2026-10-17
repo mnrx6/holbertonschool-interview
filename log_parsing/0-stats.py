@@ -47,5 +47,5 @@ if __name__ == "__main__":
         pass
 
     finally:
-        if count % 10 != 0:
+        if count == 0 or count % 10 != 0:
             print_stats()
